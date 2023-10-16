@@ -27,7 +27,7 @@ public class LoginTest {
     @Test
     public void loginTesting(){
         mainPage.loginButton.click();
-        loginSection.emailTextBox.setText("selenium@seleniumupb.com");
+        loginSection.emailTextBox.setText("brendaaa@gmail.com");
         loginSection.pwdTextBox.setText("12345");
         loginSection.loginButton.click();
 

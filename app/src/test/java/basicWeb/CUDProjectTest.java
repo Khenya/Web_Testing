@@ -52,7 +52,7 @@ public class CUDProjectTest  {
         // select my project
         chrome.findElement(By.xpath("//li[last()]//td[text()='"+nameProject+"']")).click();
         // click menu option
-        chrome.findElement(By.xpath("//div[@style=\"display: block;\"]/img[@title='Options']")).click();
+        chrome.findElement(By.xpath("")).click();
         // click edit
         chrome.findElement(By.xpath("//ul[contains(@style,'block')]/li/a[text()='Edit']")).click();
         //fill new name project

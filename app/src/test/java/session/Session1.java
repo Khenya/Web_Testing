@@ -5,26 +5,18 @@ import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-public class Session {
-    private static Session session;
+public class Session1 {
+    private static Session1 session;
     private WebDriver browser;
-    private Session(){
+    private Session1(){
         browser = FactoryBrowser.make("chrome").create();
         browser.manage().window().maximize();
         browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
+        browser.get("https://todoist.com/auth/login");
     }
-    public static Session getInstance(){
-        if (session == null)
-            session = new Session();
+    public static Session1 getInstance(){
+        session = new Session1();
         return session;
     }
 
-    public WebDriver getBrowser() {
-        return browser;
-    }
-
-    public void closeSession(){
-        session = null;
-        browser.quit();
-    }
 }
