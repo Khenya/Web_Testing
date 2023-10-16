@@ -12,6 +12,7 @@ public class CreateProjectItem {
     MenuSection menuSection = new MenuSection();
     MainPage mainPage = new MainPage();
     LoginSection loginSection = new LoginSection();
+    String nameItem = "ghoi";
     @BeforeEach
     public void open(){
         Session.getInstance().getBrowser().get("http://todo.ly/");
@@ -33,26 +34,24 @@ public class CreateProjectItem {
     }
 
     @Test
-    public void createItem(){
+    public void createUpdateItem(){
         menuSection.selectProject.click();
-        menuSection.newItem.setText("hefowferw");
+        menuSection.newItem.setText(nameItem);
         menuSection.addNewItem.click();
         // verificacion
         Assertions.assertTrue(menuSection.newItem.isControlDisplayed(),
                 "ERROR no se pudo crear el item");
-
     }
 
     @Test
     public void updateItem(){
         menuSection.selectProject.click();
-        menuSection.selectItem.click();
-//        menuSection.selectItem.clearSetText("bolwrbd");
-//        menuSection.selectItem.setText("holaaaaa");
-// debo terminar
-//        // verificacion
-//        Assertions.assertTrue(menuSection.newItem.isControlDisplayed(),
-//                "ERROR no se pudo crear el item");
+        menuSection.selectItemButton(nameItem).click();
+        String newName = "holi";
+        menuSection.editItemInput.clearSetText(newName);
+        // verificacion
+        Assertions.assertTrue(menuSection.selectItemButton(newName).isControlDisplayed(),
+                "Error: El item no se actualizó correctamente");
     }
     @AfterEach
     public  void  close(){

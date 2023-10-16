@@ -14,5 +14,8 @@ public class MenuSection {
     public  TextBox newItem = new TextBox(By.id("NewItemContentInput"));
     public Button addNewItem = new Button(By.id("NewItemAddButton"));
 
-    public TextBox selectItem = new TextBox(By.xpath("//div[contains(text(), 'hefowferw')]"));
+    public Button selectItemButton(String itemName){
+        return new Button(By.xpath("//div[contains(@class,'ItemContentDiv') and text()='"+itemName+"']"));
+    }
+    public TextBox editItemInput = new TextBox(By.xpath("//div[contains(@class,'UnderEditingItem')]/div/textarea"));
 }
