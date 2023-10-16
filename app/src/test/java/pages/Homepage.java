@@ -1,8 +1,8 @@
 package pages;
 
-import controls.Button;
+import controls.Control;
 import org.openqa.selenium.By;
 
 public class Homepage {
-    public Button user = new Button(By.id(":r0:"));
+    public Control todayTitle = new Control(By.xpath("//h1/span[text()='Today']"));
 }

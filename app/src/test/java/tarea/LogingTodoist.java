@@ -26,7 +26,7 @@ public class LogingTodoist {
         loginSection2.pwdTextBox.setText("szdrwgwsrdfgvws");
         loginSection2.loginButton.click();
 
-        Assertions.assertTrue(homepage.user.isControlDisplayed(),
+        Assertions.assertTrue(homepage.todayTitle.isControlDisplayed(),
                 "ERROR no me pude iniciar sesion");
 
     }
